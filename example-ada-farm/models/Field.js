@@ -7,6 +7,7 @@ class Field {
         this.width = width
         this.height = height
         this.crops = []
+        this.animals = []
     }
 
     draw() {
@@ -17,6 +18,9 @@ class Field {
         for (var crop of this.crops) {
             crop.draw()
         }
+        for (var animal of this.animals) {
+            animal.draw()
+        }
     }
 
     plant(x, y) {
@@ -25,6 +29,11 @@ class Field {
         var cropName = this.name.split(' ') // => e.g. "Wheat"
         // Add a new crop to the field's list of crops
         this.crops.push(new Crop(cropName[0], this, x, y))
+    }
+
+    releaseCow(x,y) {
+        console.log('releasing cow')
+        this.animals.push(new Cow(this, x, y))
     }
 
     containsPoint(x, y) {
