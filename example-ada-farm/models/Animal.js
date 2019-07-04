@@ -6,7 +6,7 @@ class Animal {
     this.health = health
     this.lifespan = lifespan
     this.birthstamp = millis() / 1000
-    this.hunger = 0 // hunger can go up to ten
+    this.hunger = 10 // hunger can go up to ten
   }
 
   getAge() {

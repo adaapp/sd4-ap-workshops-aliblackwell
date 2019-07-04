@@ -16,7 +16,9 @@ class Field {
         fill('#b58969')
         rect(this.x, this.y, this.width, this.height, 10)
         for (var crop of this.crops) {
-            crop.draw()
+            if (crop != null) {
+                crop.draw()
+            } 
         }
         for (var animal of this.animals) {
             animal.draw()
